@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 23:25:48 by mtemel            #+#    #+#             */
-/*   Updated: 2023/01/16 23:25:52 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/01/17 00:36:52 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,5 @@ int main() {
 	std::cout<<full<<std::endl;*/
 
 	std::string txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	std::cout<<"The length oh the txt is: "<<txt.length()<<std::endl;
+	std::cout<<"The length of the txt is: "<<txt.length()<<std::endl;
 }
