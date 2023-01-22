@@ -12,7 +12,7 @@
 
 #include "phonebook.hpp"
 
-int	addfunc(PhoneBook NewPhoneBook, int i)
+int	addfunc(PhoneBook& NewPhoneBook, int i)
 {
 	std::cout<<std::setw(15)<<std::left<<"First name"<<":";
 	std::getline(std::cin,NewPhoneBook.NewContact[i].FirstName);
@@ -56,5 +56,6 @@ int	main()
 		else if (inputText.compare("EXIT") == 0)
 			break;
 		std::cout<<"i:"<<i<<std::endl;
+		std::cout<<NewPhoneBook.NewContact[0].FirstName<<std::endl;
 	}
 }
