@@ -12,11 +12,11 @@
 
 #include "phonebook.hpp"
 
-int	addfunc(PhoneBook& NewPhoneBook, int i)
+int	addfunc(PhoneBook& NewPhoneBook, int *i, int *f)
 {
 	std::cout<<std::setw(15)<<std::left<<"First name"<<":";
-	std::getline(std::cin,NewPhoneBook.NewContact[i].FirstName);
-	if(NewPhoneBook.NewContact[i].FirstName.empty())
+	std::getline(std::cin,NewPhoneBook.NewContact[(*i)].FirstName);
+	if(NewPhoneBook.NewContact[(*i)].FirstName.empty())
 		return (i);
 	std::cout<<std::setw(15)<<std::left<<"Last name"<<":";
 	std::getline(std::cin,NewPhoneBook.NewContact[i].LastName);
@@ -34,15 +34,27 @@ int	addfunc(PhoneBook& NewPhoneBook, int i)
 	std::getline(std::cin,NewPhoneBook.NewContact[i].DarkestSecret);
 	if(NewPhoneBook.NewContact[i].DarkestSecret.empty())
 		return (i);
+	(*f) = 1;
 	if (i < 7)
 		return (i+1);
 	else
 		return (0);
 }
 
+void	searchfunc(PhoneBook& NewPhoneBook, int *i, int f)
+{
+	int c = 0;
+	std::cout<<"*----------*----------*----------*----------*"<<std::endl;
+	while (c <= *i)
+	{
+		if (f != 0)
+	}
+}
+
 int	main()
 {
 	int i = 0;
+	int f = 0;
 	std::string inputText;
 	PhoneBook NewPhoneBook;
 	while(1)
@@ -50,9 +62,9 @@ int	main()
 		std::cout<<"Enter a command:";
 		std::getline(std::cin,inputText);
 		if (inputText.compare("ADD") == 0)
-			i = addfunc(NewPhoneBook, i);
+			i = addfunc(NewPhoneBook&, *i, *f);
 		else if (inputText.compare("SEARCH") == 0)
-			std::cout<<"User entered SEARCH!"<<std::endl;
+			searchfunc(NewPhoneBook&, i, f);
 		else if (inputText.compare("EXIT") == 0)
 			break;
 		std::cout<<"i:"<<i<<std::endl;
