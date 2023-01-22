@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME = phonebook
-CC = c++
+CC = c++ -g
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = *.cpp
 OBJS = $(SRCS:.cpp = .o)

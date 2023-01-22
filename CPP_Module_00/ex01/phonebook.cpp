@@ -170,7 +170,10 @@ int	main()
 		if (inputText.compare("ADD") == 0)
 			i = addfunc(NewPhoneBook, &i, &f, &t);
 		else if (inputText.compare("SEARCH") == 0)
+		{
 			searchfunc(NewPhoneBook, f);
+			std::cin.ignore();
+		}
 		else if (inputText.compare("EXIT") == 0)
 			break;
 		//std::cout<<"i:"<<i<<std::endl;
