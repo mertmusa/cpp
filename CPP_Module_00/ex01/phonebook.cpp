@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 00:23:36 by mtemel            #+#    #+#             */
-/*   Updated: 2023/01/24 18:07:35 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/01/24 18:21:27 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int	addfunc(PhoneBook& NewPhoneBook, int *i, int *f, int *t)
 	if(!NewPhoneBook.NewContact[(*i)].DarkestSecret.empty())
 	{
 		holder = 5;
-		tempp = NewPhoneBook.NewContact[(*i)].DarkestSecret;
+		tempd = NewPhoneBook.NewContact[(*i)].DarkestSecret;
 	}
 	std::cout<<std::setw(15)<<std::left<<"Darkest secret"<<":";
 	std::getline(std::cin,NewPhoneBook.NewContact[(*i)].DarkestSecret);
