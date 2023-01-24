@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/24 19:21:10 by mtemel            #+#    #+#              #
-#    Updated: 2023/01/25 00:06:04 by mtemel           ###   ########.fr        #
+#    Created: 2023/01/25 01:39:30 by mtemel            #+#    #+#              #
+#    Updated: 2023/01/25 01:39:48 by mtemel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
+NAME = zombiehorde
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = *.cpp
