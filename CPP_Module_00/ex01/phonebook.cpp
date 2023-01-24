@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 00:23:36 by mtemel            #+#    #+#             */
-/*   Updated: 2023/01/22 01:35:05 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/01/24 18:07:35 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,7 @@ void	searchfunc(PhoneBook& NewPhoneBook, int f)
 	int c = 0;
 	int s = 0;
 	std::string temp;
+	std::string temp_int;
 	while (c < f)
 	{
 		if (f != 0)
@@ -140,20 +141,38 @@ void	searchfunc(PhoneBook& NewPhoneBook, int f)
 		c++;
 	}
 	std::cout<<std::setw(15)<<std::left<<"Enter index"<<":";
-	std::cin>>s;
+	std::getline(std::cin,temp_int);
+	std::istringstream my_stream(temp_int);
+	if(!(my_stream>>s))
+	{
+		std::cout<<"\033[1;31mENTER A VALID NUMBER!\033[0m"<<std::endl;
+		return;
+	}
+	//std::cout<<s<<std::endl;
 	if (s >= f)
 		std::cout<<"\033[1;31mENTER INDEX NUMBER LESS THAN "<<f<<"!\033[0m"<<std::endl;
 	else if (s >= 0 && s < f)
 	{
-		std::cout<<"*----------*----------*----------*----------*"<<std::endl;
+		/*std::cout<<"*----------*----------*----------*----------*"<<std::endl;
 		std::cout<<"|"<<std::setw(10)<<std::right<<s<<"|";
 		std::cout<<std::setw(10)<<std::right<<(NewPhoneBook.NewContact[s].FirstName.length() > 10 ? (NewPhoneBook.NewContact[s].FirstName.substr(0,9).append(".")) : (NewPhoneBook.NewContact[s].FirstName))<<"|";
 		std::cout<<std::setw(10)<<std::right<<(NewPhoneBook.NewContact[s].LastName.length() > 10 ? (NewPhoneBook.NewContact[s].LastName.substr(0,9).append(".")) : (NewPhoneBook.NewContact[s].LastName))<<"|";
 		std::cout<<std::setw(10)<<std::right<<(NewPhoneBook.NewContact[s].NickName.length() > 10 ? (NewPhoneBook.NewContact[s].NickName.substr(0,9).append(".")) : (NewPhoneBook.NewContact[s].NickName))<<"|";
 		std::cout<<std::endl;
-		std::cout<<"*----------*----------*----------*----------*"<<std::endl;
+		std::cout<<"*----------*----------*----------*----------*"<<std::endl;*/
+		std::cout<<"\033[1;33m"<<s<<". CONTACT INFORMATION:\033[0m"<<std::endl;
+		std::cout<<"\033[1;34m"<<std::setw(15)<<std::left<<"First name"<<":\033[0m";
+		std::cout<<NewPhoneBook.NewContact[s].FirstName<<std::endl;
+		std::cout<<"\033[1;34m"<<std::setw(15)<<std::left<<"Last name"<<":\033[0m";
+		std::cout<<NewPhoneBook.NewContact[s].LastName<<std::endl;
+		std::cout<<"\033[1;34m"<<std::setw(15)<<std::left<<"Nickname"<<":\033[0m";
+		std::cout<<NewPhoneBook.NewContact[s].NickName<<std::endl;
+		std::cout<<"\033[1;34m"<<std::setw(15)<<std::left<<"Phone number"<<":\033[0m";
+		std::cout<<NewPhoneBook.NewContact[s].PhoneNumber<<std::endl;
+		std::cout<<"\033[1;34m"<<std::setw(15)<<std::left<<"Darkest secret"<<":\033[0m";
+		std::cout<<NewPhoneBook.NewContact[s].DarkestSecret<<std::endl;
 	}
-	std::getline(std::cin,temp);
+	//std::getline(std::cin,temp);
 }
 
 int	main()
@@ -172,7 +191,7 @@ int	main()
 		else if (inputText.compare("SEARCH") == 0)
 		{
 			searchfunc(NewPhoneBook, f);
-			std::cin.ignore();
+			//std::cin.ignore();
 		}
 		else if (inputText.compare("EXIT") == 0)
 			break;

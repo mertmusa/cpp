@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 00:23:32 by mtemel            #+#    #+#             */
-/*   Updated: 2023/01/22 01:17:58 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/01/24 17:01:58 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <sstream>
 
 class	Contact
 {
