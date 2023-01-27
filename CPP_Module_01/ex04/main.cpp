@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 21:25:58 by mtemel            #+#    #+#             */
-/*   Updated: 2023/01/27 13:13:32 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/01/27 20:14:53 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ int main(int argc, char *argv[])
 	std::string filename;
 	std::string fileRep;
 	std::string temporalis;
+	std::string beforeoc;
+	std::string afteroc;
+	std::size_t found;
 
 	if(argc != 4)
 	{
@@ -40,23 +43,43 @@ int main(int argc, char *argv[])
 
 	//iFile.open("filename.txt");//this file have to exist
 	iFile.open(filename.c_str());//this file have to exist
-	/*if(!iFile.good())
+	if(!iFile.good())
 	{
 		std::cout<<"File can't open!"<<std::endl;
 		return (0);
-	}*/
+	}
 	/*if(!iFile.is_open())
 	{
 		std::cout<<"File can't open!"<<std::endl;
 		return (0);
 	}*/
+	fileRep = filename + ".replace";
+	oFile.open(fileRep.c_str());
+	if(!oFile.is_open())
+	{
+		std::cout<<"outFile doesn't open properly!"<<std::endl;
+		return (0);
+	}
 
 	while(std::getline(iFile, temporalis))
 	{
-		std::cout<<temporalis<<std::endl;
+		found = temporalis.find(s1, s1.size());
+		if(found != std::string::npos)
+		{
+			//std::cout<<found<<std::endl;
+			afteroc = temporalis.substr(found + s1.size(), temporalis.size());
+			beforeoc = temporalis.substr(0, found);
+			temporalis = beforeoc + s2 + afteroc;
+			//
+			oFile<<temporalis<<std::endl;
+			//std::cout<<temporalis<<std::endl;
+		}
+		else
+			oFile<<temporalis<<std::endl;
+		//std::cout<<temporalis<<std::endl;
 	}
 
-	fileRep = filename + ".replace";
+	/*fileRep = filename + ".replace";
 
 	oFile.open(fileRep.c_str());//if file does not exist it will create for you
 	//if the oFile exists, it will delete the file and re-create it
@@ -64,7 +87,7 @@ int main(int argc, char *argv[])
 	{
 		std::cout<<"outFile doesn't open properly!"<<std::endl;
 		return (0);
-	}
+	}*/
 
 	//iFile>>variable;
 	//oFile<<variable;
