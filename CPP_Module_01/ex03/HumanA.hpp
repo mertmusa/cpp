@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 20:26:28 by mtemel            #+#    #+#             */
-/*   Updated: 2023/01/26 01:10:31 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/01/27 18:18:33 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@
 class HumanA{
 	private:
 		std::string name;
-		Weapon& WeaponA;
+		Weapon* WeaponA;
 	public:
+		//HumanA();
+		HumanA(std::string name, Weapon& WeaponP);
 		void attack();
-		HumanA(std::string name, Weapon WeaponP);
 };
 
 #endif

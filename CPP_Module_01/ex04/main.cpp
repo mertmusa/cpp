@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 21:25:58 by mtemel            #+#    #+#             */
-/*   Updated: 2023/01/27 01:59:41 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/01/27 13:13:32 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 		std::cout<<temporalis<<std::endl;
 	}
 
-	fileRep = filename.append(".replace");
+	fileRep = filename + ".replace";
 
 	oFile.open(fileRep.c_str());//if file does not exist it will create for you
 	//if the oFile exists, it will delete the file and re-create it
