@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 21:25:58 by mtemel            #+#    #+#             */
-/*   Updated: 2023/01/28 14:24:28 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/01/28 14:49:57 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 
 	while(std::getline(iFile, temporalis))
 	{
-		found = temporalis.find(s1, s1.size());
+		found = temporalis.find(s1);
 		while(found != std::string::npos)
 		{
 			//std::cout<<found<<std::endl;
@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
 			//
 			//oFile<<temporalis<<std::endl;
 			//std::cout<<temporalis<<std::endl;
-			found = temporalis.find(s1, s1.size());
+			found = temporalis.find(s1);
 		}
 		oFile<<temporalis<<std::endl;
 		//std::cout<<temporalis<<std::endl;
