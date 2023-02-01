@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 17:15:08 by mtemel            #+#    #+#             */
-/*   Updated: 2023/01/31 19:48:07 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/01 17:10:27 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,13 @@ int main( void )
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 
 	return 0;
+
+	/*float i = 42.42;
+	int j;
+
+	j=(int)i << 8;
+	//j=(int)i;
+	i=(float)j / (float)(1<<8);
+	//std::cout<<j<<std::endl;
+	std::cout<<i<<std::endl;*/
 }
