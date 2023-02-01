@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:16:55 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/01 02:17:02 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/01 15:04:30 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ float	Fixed::toFlaot(void)
 
 int	Fixed::toInt(void)
 {
-	return (fixedval / 1<<this->fixfrac);
+	return (fixedval / 1<<fixfrac);
 }
 
 Fixed::Fixed(void)
@@ -66,12 +66,13 @@ Fixed& Fixed::operator = (const Fixed& mfcopy)
 	return (*this);
 }
 
-/*Fixed& Fixed::operator << (const Fixed& mfcopy)
+std::ostream& Fixed::operator<<(std::ostream& o, const Fixed& mfcopy)
 {
-	std::cout<<"Copy assignment operator called"<<std::endl;
-	mfcopy.toFlaot();
-	return (*this);
-}*/
+	//std::cout<<"Copy assignment operator called"<<std::endl;
+	//mfcopy.toFlaot();
+	o << Fixed.toFloat();
+	return (o);
+}
 
 Fixed::~Fixed()
 {

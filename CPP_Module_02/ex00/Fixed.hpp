@@ -6,9 +6,12 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 16:13:22 by mtemel            #+#    #+#             */
-/*   Updated: 2023/01/31 17:48:12 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/01 15:07:25 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
 
@@ -24,3 +27,5 @@ class Fixed{
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
 };
+
+#endif
