@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 19:53:26 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/04 17:43:36 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/04 23:50:05 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //OCF Rules
 ClapTrap::ClapTrap()
 {
-	std::cout << "PARENT CONSTRUCTOR CALLED" << std::endl;
+	std::cout << "PARENT DEFAULT CONSTRUCTOR CALLED" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string sName)

@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 16:35:07 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/04 23:26:27 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/05 00:25:49 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ScavTrap::ScavTrap()
 	std::cout<<"CHILD Default Constructor called!"<<std::endl;
 }
 
-ScavTrap::ScavTrap(std::string sName)
+ScavTrap::ScavTrap(std::string sName)// : ClapTrap(sName)
 {
 	this->setName(sName);
 	this->setHit(100);
