@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 19:53:31 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/04 13:25:01 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/04 14:33:57 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class ClapTrap{
 		ClapTrap(const ClapTrap& clapcopy);
 		ClapTrap& operator = (const ClapTrap& clapcopy);
 		~ClapTrap(void);
-		std::string getName(void);
+		std::string getName(void) const;
 		int	getHit(void);
 		int	getEnergy(void);
 		int	getAttack(void);
