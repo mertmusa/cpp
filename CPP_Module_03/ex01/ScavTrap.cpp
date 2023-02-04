@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 16:35:07 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/04 17:42:48 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/04 23:26:27 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ ScavTrap::~ScavTrap()
 	std::cout<<"CHILD Destructor of "<<this->getName()<<" called!"<<std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& stcopy)
+ScavTrap::ScavTrap(const ScavTrap& stcopy) : ClapTrap()
 {
 	*this = stcopy;
 }
