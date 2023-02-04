@@ -6,11 +6,11 @@
 #    By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/03 19:50:40 by mtemel            #+#    #+#              #
-#    Updated: 2023/02/03 19:50:55 by mtemel           ###   ########.fr        #
+#    Updated: 2023/02/04 17:45:09 by mtemel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Open
+NAME = Serena
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = *.cpp
