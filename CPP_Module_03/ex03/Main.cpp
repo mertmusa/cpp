@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 19:51:44 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/05 22:51:30 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/05 23:24:16 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,13 @@
 int main()
 {
 	DiamondTrap a("AALLLLLLLLLYYYYY");
+	DiamondTrap b(a);
 
 	a.attack("ENNNNNEEEEEMMMMYYYYY");
 	a.whoAmI();
+	std::cout<<"a finished -> b starts!"<<std::endl;
+	b.attack("ENNNNNEEEEEMMMMYYYYY");
+	b.whoAmI();
 
 	return (0);
 }

@@ -6,13 +6,13 @@
 #    By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/03 19:50:40 by mtemel            #+#    #+#              #
-#    Updated: 2023/02/05 20:15:14 by mtemel           ###   ########.fr        #
+#    Updated: 2023/02/05 23:27:47 by mtemel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Weird
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow #-Wno-shadow
 SRCS = *.cpp
 OBJS = $(SRCS:.cpp = .o)
 

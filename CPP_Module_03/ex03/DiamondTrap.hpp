@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 19:42:01 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/05 22:55:40 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/05 23:18:53 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,7 @@ class DiamondTrap : public ScavTrap, public FragTrap{
 		void attack(const std::string& target);
 		DiamondTrap();
 		DiamondTrap(std::string sName);
+		DiamondTrap(const DiamondTrap& ftcopy);
+		DiamondTrap& operator = (const DiamondTrap& ftcopy);
+		~DiamondTrap();
 };
