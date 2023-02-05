@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 19:53:31 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/05 22:12:38 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/06 01:37:20 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 
 class ClapTrap{
-	private:
+	protected:
 		std::string name;
 		int hitPoints;
 		int energyPoints;

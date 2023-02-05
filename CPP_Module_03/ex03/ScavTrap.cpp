@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 16:35:07 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/05 23:03:02 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/06 01:31:48 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ScavTrap::attack(const std::string& target)
 {
 	if(this->getEnergy() >= 1 && this->getHit() > 0)
 	{
-		std::cout<<"\033[1;34mScavTrap "<<this->getName()<<" attacks "<< target <<", causing "<<this->getAttack()<<" points of damage!\033[0m"<<std::endl;
+		std::cout<<"\033[1;34mScavTrap "<<name<<" attacks "<< target <<", causing "<<this->getAttack()<<" points of damage!\033[0m"<<std::endl;
 		this->setEnergy(this->getEnergy() - 1);
 	}
 	else
