@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 16:35:07 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/05 18:20:23 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/05 18:20:42 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ScavTrap::ScavTrap()
 {
-	std::cout<<"CHILD Default Constructor called!"<<std::endl;
+	std::cout<<"CHILD SCAV Default Constructor called!"<<std::endl;
 }
 
 ScavTrap::ScavTrap(std::string sName) : ClapTrap(sName)
@@ -23,12 +23,12 @@ ScavTrap::ScavTrap(std::string sName) : ClapTrap(sName)
 	this->setHit(100);
 	this->setEnergy(50);
 	this->setAttack(20);
-	std::cout<<"CHILD Constructor of "<<this->getName()<<" called!"<<std::endl;
+	std::cout<<"CHILD SCAV Constructor of "<<this->getName()<<" called!"<<std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout<<"CHILD Destructor of "<<this->getName()<<" called!"<<std::endl;
+	std::cout<<"CHILD SCAV Destructor of "<<this->getName()<<" called!"<<std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& stcopy) : ClapTrap()
@@ -58,5 +58,5 @@ void	ScavTrap::attack(const std::string& target)
 		this->setEnergy(this->getEnergy() - 1);
 	}
 	else
-		std::cout<<"ClapTrap "<<this->getName()<<" has no energy left! Let him get some rest"<<std::endl;
+		std::cout<<"ScavTrap "<<this->getName()<<" has no energy left! Let him get some rest"<<std::endl;
 }
