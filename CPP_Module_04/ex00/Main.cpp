@@ -6,12 +6,13 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 02:15:08 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/06 03:29:14 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/06 17:03:07 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
@@ -43,6 +44,22 @@ int main()
 	delete j;
 	std::cout<<"---7---"<<std::endl;
 	delete i;
+
+	std::cout<<"-----v-----"<<std::endl;
+	std::cout<<"---WRONG---"<<std::endl;
+	std::cout<<"-----v-----"<<std::endl;
+
+	const WrongAnimal* wrongmeta = new WrongAnimal();
+	std::cout<<"---8---"<<std::endl;
+	const WrongAnimal* g = new WrongCat();
+	std::cout << g->getType() << " " << std::endl;
+	g->makeSound();
+	std::cout<<"---9---"<<std::endl;
+	wrongmeta->makeSound();
+	std::cout<<"---10--"<<std::endl;
+	delete wrongmeta;
+	std::cout<<"---11--"<<std::endl;
+	delete g;
 
 	return (0);
 }
