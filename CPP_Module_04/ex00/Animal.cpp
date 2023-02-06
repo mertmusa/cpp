@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 02:21:22 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/06 02:48:59 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/06 03:25:19 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ std::string Animal::getType(void) const
 	return(this->type);
 }
 
-void Animal::makeSound()
+void Animal::makeSound() const
 {
 	std::cout << "\033[1;33mAnimal " << this->getType() << " makes sound!\033[0m" << std::endl;
 }

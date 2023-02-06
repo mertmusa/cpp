@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 02:42:00 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/06 02:59:50 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/06 03:25:39 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Cat : virtual public Animal{
 		Cat(const Cat& acopy);
 		Cat& operator = (const Cat& acopy);
 		~Cat(void);
-		void makeSound();
+		void makeSound() const;
 };
 
 #endif

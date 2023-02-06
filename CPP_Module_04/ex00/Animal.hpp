@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 02:15:29 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/06 03:15:17 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/06 03:30:00 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class Animal{
 		Animal();
 		Animal(const Animal& acopy);
 		Animal& operator = (const Animal& acopy);
-		~Animal(void);
+		virtual ~Animal(void);
 		void setType(std::string sType);
 		std::string getType(void) const;
-		virtual void makeSound();
+		virtual void makeSound() const;
 };
 
 #endif
