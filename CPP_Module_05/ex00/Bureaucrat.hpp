@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 23:27:05 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/08 17:21:28 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/08 18:01:44 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,19 @@
 //Orthodox Canonical Form. But every other class has to.
 
 #include <iostream>
+#include <exception>
 
-class TooHighException : public std::exception{
+class GradeTooHighException : public std::exception{
 	public:
 		virtual const std::string what(){
-			return ("\033[1;32mGrade is too high!\033[0m");
+			return ("\033[1;31mGrade is too high!\033[0m");
 		}
 };
 
-class TooLowException : public std::exception{
+class GradeTooLowException : public std::exception{
 	public:
 		virtual const std::string what(){
-			return ("\033[1;32mGrade is too low!\033[0m");
+			return ("\033[1;31mGrade is too low!\033[0m");
 		}
 };
 
@@ -36,8 +37,6 @@ class Bureaucrat{
 		std::string name;
 		int grade;
 	public:
-		TooHighException GradeTooHighException;
-		TooLowException GradeTooLowException;
 		Bureaucrat(const std::string sName, int sGrade);
 		Bureaucrat(const Bureaucrat& bcopy);
 		Bureaucrat& operator = (const Bureaucrat& bcopy);

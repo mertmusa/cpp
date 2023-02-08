@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 00:05:15 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/08 17:24:11 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/08 17:59:43 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,18 +45,11 @@ void Bureaucrat::setName(std::string sName)
 
 void Bureaucrat::setGrade(int sGrade)
 {
-	try
-	{
-		if (sGrade < 1)
-			throw this->GradeTooHighException;
-		else if (sGrade > 150)
-			throw this->GradeTooLowException;
-		this->grade = sGrade;
-	}
-	catch(std::exception &exp)
-	{
-		std::cout<< exp.what() << std::endl;
-	}
+	if (sGrade < 1)
+		throw GradeTooHighException();
+	else if (sGrade > 150)
+		throw GradeTooLowException();
+	this->grade = sGrade;
 }
 
 const std::string Bureaucrat::getName() const
