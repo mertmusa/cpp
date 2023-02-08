@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 23:27:05 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/08 00:06:50 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/08 17:21:28 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,36 @@
 
 #include <iostream>
 
+class TooHighException : public std::exception{
+	public:
+		virtual const std::string what(){
+			return ("\033[1;32mGrade is too high!\033[0m");
+		}
+};
+
+class TooLowException : public std::exception{
+	public:
+		virtual const std::string what(){
+			return ("\033[1;32mGrade is too low!\033[0m");
+		}
+};
+
 class Bureaucrat{
-		const std::string name;
+		std::string name;
 		int grade;
 	public:
+		TooHighException GradeTooHighException;
+		TooLowException GradeTooLowException;
 		Bureaucrat(const std::string sName, int sGrade);
+		Bureaucrat(const Bureaucrat& bcopy);
+		Bureaucrat& operator = (const Bureaucrat& bcopy);
 		~Bureaucrat();
-		setName(const std::string sName);
-		setGrade(int sGrade);
-		getName() const;
-		getGrade() const;
-		increment();
-		decrement();
+		void setName(const std::string sName);
+		void setGrade(int sGrade);
+		const std::string getName() const;
+		int getGrade() const;
+		void increment();
+		void decrement();
 };
 	std::ostream& operator << (std::ostream& ost, const Bureaucrat& bcopy);
 

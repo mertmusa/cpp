@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 00:05:15 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/08 00:13:00 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/08 17:24:11 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,70 @@ Bureaucrat::Bureaucrat(const std::string sName, int sGrade)
 	std::cout << "\033[1;33mBUREAUCRAT CONSTRUCTOR CALLED\033[0m" << std::endl;
 }
 
+Bureaucrat::Bureaucrat(const Bureaucrat& bcopy)
+{
+	*this = bcopy;
+	std::cout << "\033[1;33mBUREAUCRAT COPY CONSTRUCTOR CALLED\033[0m" << std::endl;
+}
+
+Bureaucrat& Bureaucrat::operator = (const Bureaucrat& bcopy)
+{
+	setName(bcopy.getName());
+	setGrade(bcopy.getGrade());
+	std::cout << "\033[1;33mBUREAUCRAT OPERATOR ASSIGNMENT CALLED\033[0m" << std::endl;
+	return (*this);
+}
+
 Bureaucrat::~Bureaucrat()
 {
 	std::cout << "\033[1;33mBUREAUCRAT DESTRUCTOR CALLED\033[0m" << std::endl;
 }
 
-Bureaucrat::setName(const std::string sName)
+void Bureaucrat::setName(std::string sName)
 {
 	this->name = sName;
 }
 
-Bureaucrat::setGrade(int sGrade)
+void Bureaucrat::setGrade(int sGrade)
 {
 	try
+	{
+		if (sGrade < 1)
+			throw this->GradeTooHighException;
+		else if (sGrade > 150)
+			throw this->GradeTooLowException;
+		this->grade = sGrade;
+	}
+	catch(std::exception &exp)
+	{
+		std::cout<< exp.what() << std::endl;
+	}
+}
+
+const std::string Bureaucrat::getName() const
+{
+	return (this->name);
+}
+
+int Bureaucrat::getGrade() const
+{
+	return (this->grade);
+}
+
+void Bureaucrat::increment()
+{
+	setGrade(this->getGrade() - 1);
+}
+
+void Bureaucrat::decrement()
+{
+	setGrade(this->getGrade() + 1);
+}
+
+std::ostream& operator << (std::ostream& ost, const Bureaucrat& bcopy)
+{
+	ost << bcopy.getName();
+	ost << ", bureaucrat grade ";
+	ost << bcopy.getGrade();
+	return (ost);
 }
