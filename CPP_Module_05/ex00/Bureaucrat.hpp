@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 23:27:05 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/08 18:01:44 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/08 22:33:19 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ class Bureaucrat{
 		std::string name;
 		int grade;
 	public:
+		Bureaucrat();
 		Bureaucrat(const std::string sName, int sGrade);
 		Bureaucrat(const Bureaucrat& bcopy);
 		Bureaucrat& operator = (const Bureaucrat& bcopy);

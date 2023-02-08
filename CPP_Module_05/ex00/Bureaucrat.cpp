@@ -6,16 +6,21 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 00:05:15 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/08 17:59:43 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/08 22:38:06 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat()
+{
+	std::cout << "\033[1;33mBUREAUCRAT DEFAULT CONSTRUCTOR CALLED\033[0m" << std::endl;
+}
+
 Bureaucrat::Bureaucrat(const std::string sName, int sGrade)
 {
-	this->setGrade(sGrade);
 	this->setName(sName);
+	this->setGrade(sGrade);
 	std::cout << "\033[1;33mBUREAUCRAT CONSTRUCTOR CALLED\033[0m" << std::endl;
 }
 
@@ -46,10 +51,17 @@ void Bureaucrat::setName(std::string sName)
 void Bureaucrat::setGrade(int sGrade)
 {
 	if (sGrade < 1)
+	{
+		this->grade = 1;
 		throw GradeTooHighException();
+	}
 	else if (sGrade > 150)
+	{
+		this->grade = 150;
 		throw GradeTooLowException();
-	this->grade = sGrade;
+	}
+	else
+		this->grade = sGrade;
 }
 
 const std::string Bureaucrat::getName() const
