@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:56:27 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/09 17:28:25 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/09 22:17:49 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 int main()
 {
 	Bureaucrat kro;
+	std::cout << "\033[0;102m" <<__LINE__ << "\033[0m" << std::endl;
 	Bureaucrat bro(kro);
+	std::cout << "\033[0;102m" <<__LINE__ << "\033[0m" << std::endl;
 	std::cout << bro << std::endl;
 	bro.setName("Memur");
 	try
@@ -61,7 +63,7 @@ int main()
 
 	try
 	{
-		bro.setGrade(1);
+		bro.setGrade(0);
 	}
 	catch(GradeTooHighException &e)
 	{
@@ -71,9 +73,9 @@ int main()
 
 	try
 	{
-		bro.decrement();
+		bro.increment();
 	}
-	catch(GradeTooLowException &e)
+	catch(GradeTooHighException &e)
 	{
 		std::cout << e.what() << '\n';
 	}
