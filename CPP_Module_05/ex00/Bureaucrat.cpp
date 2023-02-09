@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 00:05:15 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/08 22:38:06 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/09 16:39:22 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Bureaucrat::Bureaucrat()
 {
+	this->setGrade(75);
 	std::cout << "\033[1;33mBUREAUCRAT DEFAULT CONSTRUCTOR CALLED\033[0m" << std::endl;
 }
 

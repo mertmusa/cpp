@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:56:27 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/08 22:45:21 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/09 16:42:09 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 int main()
 {
-	Bureaucrat bro;
+	Bureaucrat kro;
+	Bureaucrat bro(kro);
+	bro.setName("Memur");
 	try
 	{
-		Bureaucrat bro("Memur", 10000);
+		bro.setGrade(10000);
 	}
 	catch(GradeTooLowException &e)
 	{
