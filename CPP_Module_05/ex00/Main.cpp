@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:56:27 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/09 16:42:09 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/09 17:28:25 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int main()
 {
 	Bureaucrat kro;
 	Bureaucrat bro(kro);
+	std::cout << bro << std::endl;
 	bro.setName("Memur");
 	try
 	{
