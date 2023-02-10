@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 02:15:08 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/06 17:03:07 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/10 17:09:37 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ int main()
 	delete wrongmeta;
 	std::cout<<"---11--"<<std::endl;
 	delete g;
+
+	system("leaks Polymorphism");
 
 	return (0);
 }

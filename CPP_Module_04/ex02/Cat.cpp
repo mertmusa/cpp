@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 02:42:05 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/06 22:24:09 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/10 18:05:35 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ Cat::Cat(const Cat& acopy) : Animal()
 Cat& Cat::operator = (const Cat& acopy)
 {
 	setType(acopy.getType());
+	delete this->brain;
+	this->brain = new Brain(*acopy.brain);
 	std::cout << "\033[1;34mCAT OPERATOR ASSIGNMENT CALLED\033[0m" << std::endl;
 	return(*this);
 }

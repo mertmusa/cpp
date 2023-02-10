@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 02:15:08 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/06 23:48:03 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/10 17:59:29 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,13 @@ int main()
 		else
 			d[i++] = new Dog();
 	}
-	/*while (i < 10)
-		delete c[i++];*/
+	//while (i < 10)
+	//	delete c[i++];
 	i = 0;
 	while (i < 4)
 		delete d[i++];
+
+	system("leaks Onfire");
 
 	return (0);
 }

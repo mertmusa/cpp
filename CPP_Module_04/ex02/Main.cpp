@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 02:15:08 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/07 00:37:49 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/10 17:12:57 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,6 @@ int main()
 	delete wrongmeta;
 	std::cout<<"---11--"<<std::endl;
 	delete g;*/
+
+	system("leaks Abstract");
 }
