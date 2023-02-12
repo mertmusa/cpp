@@ -26,7 +26,7 @@ class AForm
 		const int reqGradeExe;
 	public:
 		//AForm();
-		AForm(const std::string sName, const int sReqGradeSign, const int sReqGradeExe);
+		AForm(const std::string sName, const std::string sTarget, const int sReqGradeSign, const int sReqGradeExe);
 		AForm(const AForm& bcopy);
 		AForm& operator = (const AForm& bcopy);
 		~AForm();
@@ -37,6 +37,7 @@ class AForm
 		//void setReqGradeExe(const int sReqGradeExe);
 		//
 		const std::string getName() const;
+		const std::string getTarget() const;
 		bool getIsSigned() const;
 		int getReqGradeSign()const;
 		int getReqGradeExe()const;
@@ -45,6 +46,7 @@ class AForm
 		//void decrement();
 		//
 		void beSigned(Bureaucrat sBureaucrat);
+		void execute(Bureaucrat const & executor) const = 0;
 		//
 		class GradeTooHighException : public std::exception{
 			public:
@@ -56,6 +58,18 @@ class AForm
 			public:
 				virtual const char * what() const throw(){
 					return ("\033[1;31mGrade is too low!\033[0m");
+				}
+		};
+		class IsNotSignedException : public std::exception{
+			public:
+				virtual const char * what() const throw(){
+					return ("\033[1;31mForm is not signed!\033[0m");
+				}
+		};
+		class NotEnoughGradeException : public std::exception{
+			public:
+				virtual const char * what() const throw(){
+					return ("\033[1;31mGrade is not enough to execute!\033[0m");
 				}
 		};
 };
