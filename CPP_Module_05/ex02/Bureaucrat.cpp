@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 00:05:15 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/12 20:11:39 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/13 00:35:06 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void Bureaucrat::decrement(int dec)
 	setGrade(this->getGrade() + dec);
 }
 
-void Bureaucrat::signForm(AForm bcopy)
+void Bureaucrat::signForm(AForm &bcopy)
 {
 	if (bcopy.getIsSigned())
 		std::cout<<this->getName()<<" signed "<< bcopy.getName() <<std::endl;

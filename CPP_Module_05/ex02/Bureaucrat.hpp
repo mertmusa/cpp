@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 23:27:05 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/12 20:10:35 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/13 00:34:34 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class Bureaucrat{
 		void increment(int inc);
 		void decrement(int dec);
 		//
-		void signForm(AForm bcopy);//const std::string sName, bool sIsSigned
+		void signForm(AForm &bcopy);//const std::string sName, bool sIsSigned
 		//
 		class GradeTooHighException : public std::exception{
 			public:
