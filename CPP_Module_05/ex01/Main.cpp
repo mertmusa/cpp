@@ -5,79 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/08 16:56:27 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/10 20:00:42 by mtemel           ###   ########.fr       */
+/*   Created: 2023/02/11 22:42:15 by mtemel            #+#    #+#             */
+/*   Updated: 2023/02/12 03:00:17 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
-	Bureaucrat kro;
-	std::cout << "\033[0;102m" <<__LINE__ << "\033[0m" << std::endl;
-	Bureaucrat bro(kro);
-	std::cout << "\033[0;102m" <<__LINE__ << "\033[0m" << std::endl;
+	Bureaucrat bro("Memur", 20);
 	std::cout << bro << std::endl;
-	bro.setName("Memur");
-	try
-	{
-		bro.setGrade(10000);
-	}
-	catch(std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	std::cout<<"---1---"<<std::endl;
+	//Form f("Rapor", 200, -5);
+	Form f("Rapor", 50, 70);
+	std::cout << f << std::endl;
+	bro.signForm(f);
+	std::cout<<"---2---"<<std::endl;
+	bro.decrement(170);
+	f.beSigned(bro);
+	bro.signForm(f);
 	std::cout << bro << std::endl;
+	bro.increment(170);
+	f.beSigned(bro);
+	bro.signForm(f);
+	std::cout << f << std::endl;
 
-	try
-	{
-		//bro.getGrade();
-		bro.decrement();
-	}
-	catch(Bureaucrat::GradeTooLowException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << bro << std::endl;
-
-	try
-	{
-		bro.increment();
-	}
-	catch(Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << bro << std::endl;
-
-	try
-	{
-		bro.increment();
-	}
-	catch(Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << bro << std::endl;
-
-	try
-	{
-		bro.setGrade(0);
-	}
-	catch(Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << bro << std::endl;
-
-	try
-	{
-		bro.increment();
-	}
-	catch(Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << e.what() << '\n';
-	}
-	std::cout << bro << std::endl;
+	return 0;
 }

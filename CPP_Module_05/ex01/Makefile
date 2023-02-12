@@ -6,11 +6,11 @@
 #    By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 02:13:43 by mtemel            #+#    #+#              #
-#    Updated: 2023/02/07 23:26:24 by mtemel           ###   ########.fr        #
+#    Updated: 2023/02/11 22:26:08 by mtemel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureaucrat
+NAME = Form
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -Wno-shadow #-Wshadow
 SRCS = *.cpp

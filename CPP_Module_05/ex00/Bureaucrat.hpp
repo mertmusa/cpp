@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 23:27:05 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/10 12:34:58 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/11 21:04:34 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ class Bureaucrat{
 
 		class GradeTooHighException : public std::exception{
 			public:
-				virtual const char * what() const _NOEXCEPT {
+				virtual const char* what() const throw() {
 					return ("\033[1;31mGrade is too high!\033[0m");
 				}
 		};
 		class GradeTooLowException : public std::exception{
 			public:
-				virtual const char * what() const _NOEXCEPT {
+				virtual const char* what() const throw() {
 					return ("\033[1;31mGrade is too low!\033[0m");
 				}
 		};

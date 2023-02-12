@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 16:56:27 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/10 20:00:42 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/12 00:51:02 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,64 +20,16 @@ int main()
 	std::cout << "\033[0;102m" <<__LINE__ << "\033[0m" << std::endl;
 	std::cout << bro << std::endl;
 	bro.setName("Memur");
-	try
-	{
-		bro.setGrade(10000);
-	}
-	catch(std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	bro.setGrade(10000);
 	std::cout << bro << std::endl;
-
-	try
-	{
-		//bro.getGrade();
-		bro.decrement();
-	}
-	catch(Bureaucrat::GradeTooLowException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	bro.decrement();
 	std::cout << bro << std::endl;
-
-	try
-	{
-		bro.increment();
-	}
-	catch(Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	bro.increment();
 	std::cout << bro << std::endl;
-
-	try
-	{
-		bro.increment();
-	}
-	catch(Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	bro.increment();
 	std::cout << bro << std::endl;
-
-	try
-	{
-		bro.setGrade(0);
-	}
-	catch(Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	bro.setGrade(0);
 	std::cout << bro << std::endl;
-
-	try
-	{
-		bro.increment();
-	}
-	catch(Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << e.what() << '\n';
-	}
+	bro.increment();
 	std::cout << bro << std::endl;
 }
