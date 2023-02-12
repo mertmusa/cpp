@@ -6,13 +6,14 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 22:41:30 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/13 01:09:02 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/13 02:03:36 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string sTarget) : AForm(sTarget, 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string sTarget) :
+AForm(sTarget, 145, 137)
 {
 	std::cout << "\033[1;35mShrubberyCreationForm CONSTRUCTOR CALLED\033[0m" << std::endl;
 }
