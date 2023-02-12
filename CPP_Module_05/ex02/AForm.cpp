@@ -156,7 +156,21 @@ void AForm::beSigned(Bureaucrat sBureaucrat)
 {
 	if(sBureaucrat.getGrade() <= this->getReqGradeSign())
 		this->setIsSigned(true);
+	else
+		throw GradeTooLowException();
 }
+
+//
+
+void AForm::checkException(Bureaucrat const & bcopy)
+{
+	if (!this->isSigned)
+		throw IsNotSignedException();
+	else if (bcopy.getGrade() > this->getReqGradeExe())
+		throw NotEnoughGradeException();
+}
+
+//
 
 std::ostream& operator << (std::ostream& ost, const AForm& bcopy)
 {
