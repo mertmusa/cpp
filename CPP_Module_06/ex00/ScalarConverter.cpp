@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:25:01 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/13 14:47:17 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/13 14:55:01 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ void ScalarConverter::convert(std::string input)
 
 	//
 	std::cout << std::setw(10) << std::left << "char" << ": ";
-	if(input.size() == 1 && isalpha(input[0]))
+	//std::cout << "input size:" << input.size();
+	if(input.size() == 1 && !isdigit(input[0]))
 	{
 		try
 		{
@@ -58,7 +59,6 @@ void ScalarConverter::convert(std::string input)
 			std::cerr << e.what() << '\n';
 		}
 	}
-
 	//
 
 	std::cout << std::setw(10) << std::left << "int" << ": ";
