@@ -164,6 +164,7 @@ void AForm::beSigned(Bureaucrat sBureaucrat)
 
 void AForm::checkException(Bureaucrat const &bcopy) const
 {
+	//std::cout << this->getName() << ": check exception sign: " << this->getIsSigned() << std:: endl;
 	if (!(this->getIsSigned()))
 		throw AForm::IsNotSignedException();
 	else if (bcopy.getGrade() > this->getReqGradeExe())
@@ -174,12 +175,12 @@ void AForm::checkException(Bureaucrat const &bcopy) const
 
 std::ostream& operator << (std::ostream& ost, const AForm& bcopy)
 {
-	ost << "AForm name: ";
+	ost << "Form name: ";
 	ost << bcopy.getName();
 	ost << (bcopy.getIsSigned() ? ", signed" : ", not signed");
-	ost << ", required grade to sign this Aform: ";
+	ost << ", required grade to sign this form: ";
 	ost << bcopy.getReqGradeSign();
-	ost << ", required grade to execute this Aform: ";
+	ost << ", required grade to execute this form: ";
 	ost << bcopy.getReqGradeExe();
 	return (ost);
 }
