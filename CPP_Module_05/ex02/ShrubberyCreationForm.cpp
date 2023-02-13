@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 22:41:30 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/13 02:03:36 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/13 03:38:09 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,13 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	ofile.open(filename.c_str());
 	if(!ofile.is_open())
 	{
-		std::cout << "File can not open!!!" << std::endl;
+		std::cout << "\033[4;95mFile can not open!!!\033[0m" << std::endl;
 	}
 	else
 	{
 		ofile<<text;
 		ofile<<"File opened and written properly!"<<std::endl;
-		std::cout<<"File opened and written properly!"<<std::endl;
+		std::cout<<"\033[4;95mFile opened and written properly!\033[0m"<<std::endl;
 	}
 	ofile.close();
 }

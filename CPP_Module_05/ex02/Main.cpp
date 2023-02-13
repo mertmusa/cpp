@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 22:42:15 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/13 03:26:56 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/13 03:40:36 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int main()
 {
-	Bureaucrat bro("mehmet", 40);
+	Bureaucrat bro("mehmet", 0);
 	std::cout << bro << std::endl;
 	//
 	ShrubberyCreationForm s("Shrub");

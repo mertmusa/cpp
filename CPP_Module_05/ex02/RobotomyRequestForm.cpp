@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 02:02:08 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/13 02:27:06 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/13 03:38:27 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 	//exception
 	this->checkException(executor);
 	//
-	std::cout << "some drilling noise !!!!!!!" << std::endl;
+	std::cout << "\033[4;96mSome drilling noise !!!!!!!\033[0m" << std::endl;
 
 	srand(time(NULL));
 	int num = rand();
 
 	//std::cout << num << std::endl;
 	if (num % 2)
-		std::cout << this->getName() << " has been robotomized successfully!!" << std::endl;
+		std::cout << "\033[4;96m" <<this->getName() << " has been robotomized successfully!!\033[0m" << std::endl;
 	else
-		std::cout << "The robotomy failed!" << std:: endl;
+		std::cout << "\033[4;96mThe robotomy failed!\033[0m" << std:: endl;
 }

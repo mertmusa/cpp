@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 02:39:33 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/13 02:42:40 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/13 03:39:29 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 	//exception
 	this->checkException(executor);
 	//
-	std::cout << this->getName() <<" has been pardoned by Zaphod Beeblebrox" << std::endl;
+	std::cout << "\033[4;97m" << this->getName() <<" has been pardoned by Zaphod Beeblebrox\033[0m" << std::endl;
 }
