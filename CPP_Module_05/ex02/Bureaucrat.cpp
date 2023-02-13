@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 00:05:15 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/13 00:35:06 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/13 03:23:40 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,12 @@ void Bureaucrat::signForm(AForm &bcopy)
 	//	std::cout<<this->getName()<<" signed "<<sName<<std::endl;
 	//else
 	//	std::cout<<this->getName()<<" couldn't sign "<<sName<<" because doesn't have enough grade!"<<std::endl;
+}
+
+void Bureaucrat::executeForm(AForm const & form)
+{
+	form.execute(*this);
+	std::cout << this->getName() << " executed " << form.getName() << std::endl;
 }
 
 std::ostream& operator << (std::ostream& ost, const Bureaucrat& bcopy)

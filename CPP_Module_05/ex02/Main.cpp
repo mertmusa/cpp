@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 22:42:15 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/13 03:13:39 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/13 03:26:56 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@
 
 int main()
 {
-	Bureaucrat bro("mehmet", 140);
+	Bureaucrat bro("mehmet", 40);
+	std::cout << bro << std::endl;
+	//
 	ShrubberyCreationForm s("Shrub");
 	RobotomyRequestForm r("Robo");
 	PresidentialPardonForm p("Presidential");
@@ -28,6 +30,7 @@ int main()
 	std::cout << p << std::endl;
 	//
 	//beSigned
+	std::cout << "----------------be signed-----------" << std::endl;
 	//
 	try
 	{
@@ -56,10 +59,11 @@ int main()
 	}
 	//
 	//execute
+	std::cout << "--------------execute Form -------------" << std::endl;
 	//
 	try
 	{
-		s.execute(bro);
+		bro.executeForm(s);
 	}
 	catch(const std::exception& e)
 	{
@@ -68,7 +72,7 @@ int main()
 	//
 	try
 	{
-		r.execute(bro);
+		bro.executeForm(r);
 	}
 	catch(const std::exception& e)
 	{
@@ -77,7 +81,7 @@ int main()
 	//
 	try
 	{
-		p.execute(bro);
+		bro.executeForm(p);
 	}
 	catch(const std::exception& e)
 	{
