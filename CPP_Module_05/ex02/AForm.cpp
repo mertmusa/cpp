@@ -164,7 +164,7 @@ void AForm::beSigned(Bureaucrat sBureaucrat)
 
 void AForm::checkException(Bureaucrat const &bcopy) const
 {
-	if (!this->isSigned)
+	if (!(this->getIsSigned()))
 		throw AForm::IsNotSignedException();
 	else if (bcopy.getGrade() > this->getReqGradeExe())
 		throw AForm::NotEnoughGradeException();
