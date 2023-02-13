@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:25:01 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/13 14:01:31 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/13 14:17:52 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void ScalarConverter::convert(std::string input)
 	ss << input;
 
 	std::cout << std::setw(10) << std::left << "char" << ": ";
+
 	try
 	{
 		ss >> c;
