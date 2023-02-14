@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:25:01 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/13 14:55:01 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/15 02:45:29 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,17 @@ void ScalarConverter::convert(std::string input)
 {
 	std::stringstream ss;
 	char c;
-	int i;
-	float f;
-	double d;
+	//int i;
+	//float f;
+	//double d;
 
 	ss << input;
 
 	//
-	std::cout << std::setw(10) << std::left << "char" << ": ";
 	//std::cout << "input size:" << input.size();
 	if(input.size() == 1 && !isdigit(input[0]))
 	{
+		std::cout << std::setw(10) << std::left << "char" << ": ";
 		try
 		{
 			ss >> c;
@@ -58,10 +58,43 @@ void ScalarConverter::convert(std::string input)
 		{
 			std::cerr << e.what() << '\n';
 		}
+		//
+		std::cout << std::setw(10) << std::left << "int" << ": ";
+		try
+		{
+			ss >> c;
+			std::cout << (int)c << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+		//
+				std::cout << std::setw(10) << std::left << "float" << ": ";
+		try
+		{
+			ss >> c;
+			std::cout << (float)c << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+		//
+		std::cout << std::setw(10) << std::left << "double" << ": ";
+		try
+		{
+			ss >> c;
+			std::cout << (double)c << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
 	}
 	//
 
-	std::cout << std::setw(10) << std::left << "int" << ": ";
+	/*std::cout << std::setw(10) << std::left << "int" << ": ";
 	try
 	{
 		ss >> i;
@@ -96,5 +129,5 @@ void ScalarConverter::convert(std::string input)
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
-	}
+	}*/
 }
