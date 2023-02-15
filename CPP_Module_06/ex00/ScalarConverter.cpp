@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:25:01 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/15 03:05:22 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/15 17:27:37 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,91 +45,24 @@ void ScalarConverter::convert(std::string input)
 	ss << input;
 
 	//
-	//std::cout << "input size:" << input.size();
 	if(input.size() == 1 && !isdigit(input[0]))
 	{
-		std::cout << std::setw(10) << std::left << "char" << ": '";
 		try
 		{
+			std::cout << std::setw(10) << std::left << "char" << ": '";
 			ss >> c;
 			std::cout << c << "'" << std::endl;
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-		//
-		std::cout << std::setw(10) << std::left << "int" << ": ";
-		try
-		{
-			ss >> c;
+			std::cout << std::setw(10) << std::left << "int" << ": ";
 			std::cout << (int)c << std::endl;
+			std::cout << std::setw(10) << std::left << "float" << ": ";
+			std::cout << std::fixed << std::setprecision(1) << (float)c << "f" << std::endl;
+			std::cout << std::setw(10) << std::left << "double" << ": ";
+			std::cout << std::fixed << std::setprecision(1) << (double)c << std::endl;
 		}
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << '\n';
 		}
 		//
-		std::cout << std::fixed << std::setprecision(1) << std::setw(10) << std::left << "float" << ": ";
-		//std::cout << std::setw(10) << std::left << "float" << ": ";
-		try
-		{
-			ss >> c;
-			std::cout << (float)c << "f" << std::endl;
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-		//
-		std::cout << std::fixed << std::setprecision(1) << std::setw(10) << std::left << "double" << ": ";
-		//std::cout << std::setw(10) << std::left << "double" << ": ";
-		try
-		{
-			ss >> c;
-			std::cout << (double)c << std::endl;
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
 	}
-	//
-
-	/*std::cout << std::setw(10) << std::left << "int" << ": ";
-	try
-	{
-		ss >> i;
-		std::cout << i << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-
-	//
-
-	std::cout << std::setw(10) << std::left << "float" << ": ";
-	try
-	{
-		ss >> f;
-		std::cout << f << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-
-	//
-
-	std::cout << std::setw(10) << std::left << "double" << ": ";
-	try
-	{
-		ss >> d;
-		std::cout << d << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}*/
 }
