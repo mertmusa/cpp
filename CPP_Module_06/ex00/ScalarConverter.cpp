@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:25:01 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/15 02:45:29 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/15 03:05:22 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@ void ScalarConverter::convert(std::string input)
 	//std::cout << "input size:" << input.size();
 	if(input.size() == 1 && !isdigit(input[0]))
 	{
-		std::cout << std::setw(10) << std::left << "char" << ": ";
+		std::cout << std::setw(10) << std::left << "char" << ": '";
 		try
 		{
 			ss >> c;
-			std::cout << c << std::endl;
+			std::cout << c << "'" << std::endl;
 		}
 		catch(const std::exception& e)
 		{
@@ -70,18 +70,20 @@ void ScalarConverter::convert(std::string input)
 			std::cerr << e.what() << '\n';
 		}
 		//
-				std::cout << std::setw(10) << std::left << "float" << ": ";
+		std::cout << std::fixed << std::setprecision(1) << std::setw(10) << std::left << "float" << ": ";
+		//std::cout << std::setw(10) << std::left << "float" << ": ";
 		try
 		{
 			ss >> c;
-			std::cout << (float)c << std::endl;
+			std::cout << (float)c << "f" << std::endl;
 		}
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << '\n';
 		}
 		//
-		std::cout << std::setw(10) << std::left << "double" << ": ";
+		std::cout << std::fixed << std::setprecision(1) << std::setw(10) << std::left << "double" << ": ";
+		//std::cout << std::setw(10) << std::left << "double" << ": ";
 		try
 		{
 			ss >> c;
