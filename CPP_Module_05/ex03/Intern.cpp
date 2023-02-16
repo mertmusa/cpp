@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 10:40:54 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/13 11:13:30 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/16 12:42:38 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ AForm* Intern::makeForm(std::string name, std::string target)
 {
 	int i = 0;
 	const std::string f3[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
-	AForm* nForm;
+	AForm* nForm = NULL;
 
 	while (i < 3)
 	{

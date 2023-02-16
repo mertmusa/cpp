@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 22:42:15 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/13 11:24:16 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/16 12:45:25 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main()
 	try
 	{
 		rrf->beSigned(brr);
+		std::cout<< "rrf beSigned executed!"<<std::endl;
 	}
 	catch(const std::exception& e)
 	{
