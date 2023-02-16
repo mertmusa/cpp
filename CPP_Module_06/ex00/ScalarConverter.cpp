@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:25:01 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/16 17:13:47 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/16 22:27:31 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,21 @@ void flodoubimp(void)
 
 void ScalarConverter::convert(std::string input)
 {
+	if(input == "-inf" || input == "+inf" || input == "nan")
+	{
+		charintimp();
+		std::cout << std::setw(10) << std::left << "float" << ": " << input << "f" <<std::endl;
+		std::cout << std::setw(10) << std::left << "double" << ": " << input <<std::endl;
+		return;
+	}
+	else if(input == "-inff" || input == "+inff" || input == "nanf")
+	{
+		charintimp();
+		std::cout << std::setw(10) << std::left << "float" << ": " << input <<std::endl;
+		std::cout << std::setw(10) << std::left << "double" << ": " << input.substr(0,input.size() - 1) <<std::endl;
+		return;
+	}
+
 	std::stringstream ss;
 	char c;
 	int i, f_flag = 0;
@@ -73,26 +88,14 @@ void ScalarConverter::convert(std::string input)
 		std::cout << std::setw(10) << std::left << "double" << ": " << static_cast<double>(c) << std::endl;
 		return;
 	}
-	else if(input == "-inf" || input == "+inf" || input == "nan")
-	{
-		charintimp();
-		std::cout << std::setw(10) << std::left << "float" << ": " << input << "f" <<std::endl;
-		std::cout << std::setw(10) << std::left << "double" << ": " << input <<std::endl;
-		return;
-	}
-	else if(input == "-inff" || input == "+inff" || input == "nanf")
-	{
-		charintimp();
-		std::cout << std::setw(10) << std::left << "float" << ": " << input <<std::endl;
-		std::cout << std::setw(10) << std::left << "double" << ": " << input.substr(0,input.size() - 1) <<std::endl;
-		return;
-	}
 	else if (f_flag == 1)
 	{
 		try
 		{
-			f = std::stof(input);
-			std::cout << std::setw(10) << std::left << "FFFFFFFFFF" << f << std::endl; // float check
+			//f = std::stof(input); //mac
+			f = std::atof(input.c_str()); //linux
+			//ss >> f;
+			std::cout << std::setw(10) << std::left << "FFFFFFFFFF:" << f << std::endl; // float check
 			i = static_cast<int>(f);
 			std::cout << std::setw(10) << std::left << "char" << ": ";
 			if (i > 32 && i < 127)
@@ -127,9 +130,12 @@ void ScalarConverter::convert(std::string input)
 	{
 		try
 		{
-			i = std::stoi(input);
+			//i = std::stoi(input); //mac
+			//i = std::atoi(input.c_str()); //linux
+			i = std::atol(input.c_str()); //linux
+			//ss >> i;
 			std::cout << std::setw(10) << std::left << "char" << ": ";
-			if (i > 32 && i < 127)
+			if (i > 32 && i < 127 && i < INT_MAX && i > INT_MIN)
 				std::cout << "'" << static_cast<char>(i) << "'" << std::endl;
 			else
 				std::cout << "Non displayable" << std::endl;
@@ -146,4 +152,3 @@ void ScalarConverter::convert(std::string input)
 	charintimp();
 	flodoubimp();
 }
-

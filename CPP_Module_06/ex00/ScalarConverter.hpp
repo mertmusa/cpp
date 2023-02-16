@@ -6,11 +6,15 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 12:38:00 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/13 13:59:14 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/16 22:18:17 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#define _GLIBCXX_USE_C99 1 //linux
+
+#include <climits>
 #include <iostream>
+#include <cstdlib>
 #include <string>
 #include <sstream>
 #include <iomanip>

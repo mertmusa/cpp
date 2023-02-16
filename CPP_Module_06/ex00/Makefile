@@ -6,13 +6,13 @@
 #    By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 02:13:43 by mtemel            #+#    #+#              #
-#    Updated: 2023/02/13 12:53:54 by mtemel           ###   ########.fr        #
+#    Updated: 2023/02/16 21:27:51 by mtemel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = convert
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98 -Wno-shadow #-Wshadow
+FLAGS = -Wall -Wextra -Werror -std=c++98 #-Wno-shadow #-Wshadow
 SRCS = *.cpp
 OBJS = $(SRCS:.cpp = .o)
 
