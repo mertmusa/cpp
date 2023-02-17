@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 22:48:49 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/17 17:00:50 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/17 20:43:39 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,20 @@
 int main()
 {
 	Serializer serikoz;
-	Data *ptr = NULL;
+	Data *ptr = new Data;
+	uintptr_t seriuint = serikoz.serialize(ptr);
+	Data *newptr = serikoz.deserialize(seriuint);
 
-	std::cout << std::setw(10) << std::right << "Serializer:" << serikoz.serialize(ptr) << std::endl;
+	std::cout << std::setw(12) << std::left << "PTR" << ": " << ptr << std::endl;
+	std::cout << std::setw(12) << std::left << "Serialize" << ": " << seriuint << std::endl;
+	std::cout << std::setw(12) << std::left << "Deserialize" << ": " << newptr << std::endl;
+
+	delete ptr;
+
+	if (ptr == newptr)
+		std::cout << "\033[1;36mYAYY! POINTERS ARE EQUAL!\033[0m" << std::endl;
+	else
+		std::cout << "\033[1;32mNO WAY! WHAT DID JUST HAPPENED!\033[0m" << std::endl;
+
+	return (0);
 }
