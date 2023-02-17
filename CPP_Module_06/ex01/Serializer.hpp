@@ -6,11 +6,12 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 22:34:36 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/16 23:08:24 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/17 17:00:17 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <iomanip>
 #include <stdint.h>
 
 typedef struct s_data
