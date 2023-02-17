@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:25:01 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/16 22:27:31 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/17 13:06:35 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ ScalarConverter ScalarConverter::operator = (ScalarConverter const&)
 ScalarConverter::~ScalarConverter()
 {
 	//std::cout << "\033[1;33mSCALAR CONVERTER DESTRUCTOR CALLED\033[0m" << std::endl;
+}
+
+bool is_digits(const std::string &str)
+{
+	return str.find_first_not_of("0123456789") == std::string::npos;
 }
 
 void charintimp(void)
@@ -70,7 +75,7 @@ void ScalarConverter::convert(std::string input)
 	double d;
 	size_t found;
 
-	if (input[input.size() - 1] == 'f')
+	if (input[input.size() - 1] == 'f' && ((input[0] == '-' && is_digits(input.substr(1, input.size() - 1))) || is_digits(input.substr(0, input.size() - 1))))
 		f_flag = 1;
 	//std::cout << "input:" << input << std::endl;
 
@@ -81,19 +86,25 @@ void ScalarConverter::convert(std::string input)
 	//
 	if(!isdigit(input[0]) && input.size() == 1 && (ss >> c))
 	{
-		std::cout << std::setw(10) << std::left << "char" << ": ";
-		std::cout << "'" << c << "'" << std::endl;
-		std::cout << std::setw(10) << std::left << "int" << ": " << static_cast<int>(c) << std::endl;
-		std::cout << std::setw(10) << std::left << "float" << ": " << static_cast<float>(c) << "f" << std::endl;
-		std::cout << std::setw(10) << std::left << "double" << ": " << static_cast<double>(c) << std::endl;
-		return;
+		try
+		{
+			std::cout << std::setw(10) << std::left << "char" << ": ";
+			std::cout << "'" << c << "'" << std::endl;
+			std::cout << std::setw(10) << std::left << "int" << ": " << static_cast<int>(c) << std::endl;
+			std::cout << std::setw(10) << std::left << "float" << ": " << static_cast<float>(c) << "f" << std::endl;
+			std::cout << std::setw(10) << std::left << "double" << ": " << static_cast<double>(c) << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
 	}
 	else if (f_flag == 1)
 	{
 		try
 		{
-			//f = std::stof(input); //mac
-			f = std::atof(input.c_str()); //linux
+			f = std::stof(input); //mac
+			//f = std::atof(input.c_str()); //linux
 			//ss >> f;
 			std::cout << std::setw(10) << std::left << "FFFFFFFFFF:" << f << std::endl; // float check
 			i = static_cast<int>(f);
@@ -110,29 +121,33 @@ void ScalarConverter::convert(std::string input)
 		{
 			std::cerr << e.what() << '\n';
 		}
-		return;
 	}
 	else if ((found = input.find(".")) && found != std::string::npos && (ss >> d))
 	{
-		std::cout << std::setw(10) << std::left << "DDDDDDDD"<< d << std::endl; // double check
-		i = static_cast<int>(d);
-		std::cout << std::setw(10) << std::left << "char" << ": ";
-		if (i > 32 && i < 127)
-			std::cout << "'" << static_cast<char>(d) << "'" << std::endl;
-		else
-			std::cout << "Non displayable" << std::endl;
-		std::cout << std::setw(10) << std::left << "int" << ": " << static_cast<int>(d) << std::endl;
-		std::cout << std::setw(10) << std::left << "float" << ": " << static_cast<float>(d) << "f" << std::endl;
-		std::cout << std::setw(10) << std::left << "double" << ": " << d << std::endl;
-		return;
+		try
+		{
+			std::cout << std::setw(10) << std::left << "DDDDDDDD"<< d << std::endl; // double check
+			i = static_cast<int>(d);
+			std::cout << std::setw(10) << std::left << "char" << ": ";
+			if (i > 32 && i < 127)
+				std::cout << "'" << static_cast<char>(d) << "'" << std::endl;
+			else
+				std::cout << "Non displayable" << std::endl;
+			std::cout << std::setw(10) << std::left << "int" << ": " << static_cast<int>(d) << std::endl;
+			std::cout << std::setw(10) << std::left << "float" << ": " << static_cast<float>(d) << "f" << std::endl;
+			std::cout << std::setw(10) << std::left << "double" << ": " << d << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
 	}
-	else
+	else if ((input[0] == '-' && is_digits(input.substr(1, input.size()))) || is_digits(input))
 	{
 		try
 		{
-			//i = std::stoi(input); //mac
+			i = std::stoi(input); //mac
 			//i = std::atoi(input.c_str()); //linux
-			i = std::atol(input.c_str()); //linux
 			//ss >> i;
 			std::cout << std::setw(10) << std::left << "char" << ": ";
 			if (i > 32 && i < 127 && i < INT_MAX && i > INT_MIN)
@@ -147,8 +162,10 @@ void ScalarConverter::convert(std::string input)
 		{
 			std::cout << e.what() << std::endl;
 		}
-		return;
 	}
-	charintimp();
-	flodoubimp();
+	else
+	{
+		charintimp();
+		flodoubimp();
+	}
 }
