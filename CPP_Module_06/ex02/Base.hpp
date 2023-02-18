@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 20:51:37 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/18 17:35:21 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/18 18:50:23 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@ class Base
 class A : public Base
 {
 	public:
-		void sayRef() {std::cout << "This is the class A!" << std::endl;}
+		void sayRef() {std::cout << "This is the reference of class A!" << std::endl;}
 };
 
 class B : public Base
 {
 	public:
-		void sayRef() {std::cout << "This is the class B!" << std::endl;}
+		void sayRef() {std::cout << "This is the reference of class B!" << std::endl;}
 };
 
 class C : public Base
 {
 	public:
-		void sayRef() {std::cout << "This is the class C!" << std::endl;}
+		void sayRef() {std::cout << "This is the reference of class C!" << std::endl;}
 };
 
 Base *generate(void);
