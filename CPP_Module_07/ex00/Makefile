@@ -6,11 +6,11 @@
 #    By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 02:13:43 by mtemel            #+#    #+#              #
-#    Updated: 2023/02/18 21:51:26 by mtemel           ###   ########.fr        #
+#    Updated: 2023/02/18 21:51:42 by mtemel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = real
+NAME = start
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 #-Wno-shadow #-Wshadow
 SRCS = *.cpp
