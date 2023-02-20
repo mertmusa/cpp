@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 21:06:33 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/18 18:51:50 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/20 16:18:08 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int main()
 	Base& rb = b;
 	Base& rc = c;
 
-	if((long)pbase % 3 == 0)
+	if((long long int)pbase % 3 == 0)
 		identify(ra);
-	else if((long)pbase % 3 == 1)
+	else if((long long int)pbase % 3 == 1)
 		identify(rb);
 	else
 		identify(rc);
