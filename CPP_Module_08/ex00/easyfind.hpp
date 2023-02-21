@@ -6,11 +6,21 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 23:00:54 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/20 23:21:22 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/21 20:56:58 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+
+#include <algorithm>
+#include <iterator>
+#include <exception>
+
+#include <vector>
+#include <deque>
+#include <list>
+#include <set>
+#include <map>
 
 class NotFound : public std::exception{
 	public:
@@ -20,20 +30,24 @@ class NotFound : public std::exception{
 };
 
 template<typename T>
-easyfind(T haystack, int needle)
+typename T::iterator easyfind(T container, int needle)
 {
-	//find needle in haystack
-	//if there is none, throw an exception or error value
-	int hay_size = sizeof(haystack) / sizeof(int);
-	int i = 0;
-	while (i < hay_size)
-	{
-		if (haystack[i] == needle)
-			return(haystack[i]);
-		 i++;
-	}
-	if (i >= hay_size)
-	{
+	typename T::iterator it = std::find(container.begin(), container.end(), needle);
+	if (it == container.end())
 		throw NotFound();
-	}
+	std::cout << "\033[1;36mThe integer:" << needle << " found in the container!\033[0m" << std::endl;
+	return (it);
+
+	//int hay_size = sizeof(haystack) / sizeof(int);
+	//int i = 0;
+	//while (i < hay_size)
+	//{
+	//	if (haystack[i] == needle)
+	//		return(haystack[i]);
+	//	 i++;
+	//}
+	//if (i >= hay_size)
+	//{
+	//	throw NotFound();
+	//}
 }
