@@ -6,9 +6,12 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 23:45:05 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/19 02:58:07 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/22 10:15:12 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef ARRAY_HPP
+#define ARRAY_HPP
 
 #include <iostream>
 #include <exception>
@@ -47,3 +50,5 @@ class Array{
 				}
 		};
 };
+
+#endif

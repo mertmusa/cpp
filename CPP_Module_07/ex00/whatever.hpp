@@ -6,9 +6,12 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 21:44:24 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/18 22:02:41 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/22 10:10:30 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
 
 #include <iostream>
 
@@ -37,3 +40,5 @@ T max(T a, T b)
 	else
 		return(b);
 }
+
+#endif
