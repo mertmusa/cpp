@@ -6,9 +6,12 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 22:41:33 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/22 13:37:04 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/22 13:47:49 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef SPAN_HPP
+#define SPAN_HPP
 
 #include <iostream>
 #include <vector>
@@ -32,3 +35,5 @@ class Span
 		void addNumbers(int count, int num);
 		void addNumbers(int count);
 };
+
+#endif

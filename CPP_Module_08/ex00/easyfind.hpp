@@ -6,9 +6,12 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 23:00:54 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/22 11:54:01 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/22 13:47:13 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
 
 #include <iostream>
 
@@ -51,3 +54,5 @@ typename T::iterator easyfind(T container, int needle)
 	//	throw NotFound();
 	//}
 }
+
+#endif
