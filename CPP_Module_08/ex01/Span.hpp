@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 22:41:33 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/22 00:19:27 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/22 13:37:04 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,6 @@ class Span
 		void addNumber(int num);
 		int shortestSpan();
 		int longestSpan();
+		void addNumbers(int count, int num);
+		void addNumbers(int count);
 };

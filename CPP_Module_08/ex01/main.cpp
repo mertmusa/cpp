@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 23:33:08 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/22 12:16:54 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/22 13:40:37 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main() {
     //std::cout << "Shortest span: " << s.shortestSpan() << std::endl;
     //std::cout << "Longest span: " << s.longestSpan() << std::endl;
 
-	Span sp(5);
+	Span sp(10);
 	try
 	{
 		sp.addNumber(6);
@@ -37,7 +37,7 @@ int main() {
 		sp.addNumber(17);
 		sp.addNumber(9);
 		sp.addNumber(11);
-		sp.addNumber(100);
+		sp.addNumbers(5, 4);
 	}
 	catch(std::exception &e)
 	{
@@ -47,7 +47,4 @@ int main() {
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
 	return 0;
-
-
-    return 0;
 }
