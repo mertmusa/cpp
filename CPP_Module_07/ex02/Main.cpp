@@ -6,13 +6,13 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 02:39:33 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/19 03:00:00 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/22 11:52:59 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
-#define MAX_VAL 750
+#define MAX_VAL 5
 #include <cstdlib>
 int main(int, char**)
 {
@@ -25,12 +25,20 @@ int main(int, char**)
         numbers[i] = value;
         mirror[i] = value;
     }
-    //SCOPE
+
+	//SCOPE
     {
         Array<int> tmp = numbers;
         Array<int> test(tmp);
+		//for (int i = 0; i < MAX_VAL; i++)
+    	//{
+		//	std::cout << numbers[i] << std::endl;
+		//	std::cout << test[i] << std::endl;
+		//	std::cout << tmp[i] << std::endl;
+    	//}
     }
 
+	//std::cout << "GG" << std::endl;
     for (int i = 0; i < MAX_VAL; i++)
     {
         if (mirror[i] != numbers[i])
@@ -58,8 +66,11 @@ int main(int, char**)
 
     for (int i = 0; i < MAX_VAL; i++)
     {
+		//std::cout << numbers[i] << std::endl;
         numbers[i] = rand();
     }
-    delete [] mirror;//
+    delete [] mirror;
+
+	//system("leaks Array");
     return 0;
 }

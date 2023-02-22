@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 23:00:54 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/21 20:56:58 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/22 11:54:01 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 class NotFound : public std::exception{
 	public:
-		virtual const char* what() const throw() {
+		const char* what() const throw() {
 			return ("\033[1;31mContainer doesn't contain the given number!\033[0m");
 		}
 };

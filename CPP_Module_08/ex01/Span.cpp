@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 23:50:17 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/22 00:08:18 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/22 12:11:18 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int Span::shortestSpan()
 {
     if (data.size() < 2)
         throw std::logic_error("Cannot find shortest span with less than 2 numbers");
-
     std::sort(data.begin(), data.end());
     int shortest = std::numeric_limits<int>::max();
 	//std::cout << "shortest: " << shortest << std::endl;
@@ -62,6 +61,6 @@ int Span::longestSpan()
 		if (data[i] > max)
 			max = data[i];
     }
-	longest = max -min;
+	longest = max - min;
     return longest;
 }

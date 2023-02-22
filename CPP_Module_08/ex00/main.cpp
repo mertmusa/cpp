@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 23:04:02 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/21 21:21:46 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/22 11:58:37 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int main()
 	}
 
 	std::deque<int> dq;
+	std::map<int , int> m;
 
     dq.push_back(1);   // added element at the back
     dq.push_front(2);  // added element at the front
