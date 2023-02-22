@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 23:50:17 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/22 12:11:18 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/22 12:17:54 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ Span& Span::operator = (const Span&)
 void Span::addNumber(int num)
 {
     if (data.size() >= N)
-        throw std::out_of_range("Span is full");
+        throw std::out_of_range("\033[1;31mSpan is full\033[0m");
     data.push_back(num);
 }
 
 int Span::shortestSpan()
 {
     if (data.size() < 2)
-        throw std::logic_error("Cannot find shortest span with less than 2 numbers");
-    std::sort(data.begin(), data.end());
+        throw std::logic_error("\033[1;31mCannot find shortest span with less than 2 numbers\033[0m");
+    sort(data.begin(), data.end());
     int shortest = std::numeric_limits<int>::max();
 	//std::cout << "shortest: " << shortest << std::endl;
     for (unsigned int i = 1; i < data.size(); ++i)
@@ -49,7 +49,7 @@ int Span::shortestSpan()
 int Span::longestSpan()
 {
     if (data.size() < 2)
-        throw std::logic_error("Cannot find longest span with less than 2 numbers");
+        throw std::logic_error("\033[1;31mCannot find longest span with less than 2 numbers\033[0m");
     int longest = 0;
     int min = std::numeric_limits<int>::max(); //2147483647;
     int max = std::numeric_limits<int>::min(); //-2147483648;
