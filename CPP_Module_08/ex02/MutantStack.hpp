@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:45:56 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/23 11:34:35 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/23 12:34:03 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,7 @@ class MutantStack : public std::stack<T> {
 		}
 
 		typedef typename std::stack<T>::container_type::iterator iterator;
-		typedef typename std::stack<T>::container_type::const_iterator const_iterator;
 
 		iterator begin() {return this->c.begin();}
 		iterator end() {return this->c.end();}
-
-		const_iterator begin() const {return this->c.begin();}
-		const_iterator end() const {return this->c.end();}
-
-		//typename std::stack<T>::container_type& container()
-		//{
-		//	return this->c;
-		//}
 };
