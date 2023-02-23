@@ -6,14 +6,18 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:44:37 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/22 17:12:22 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/23 12:13:07 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
 
+#include <list>
+
 int main()
 {
+	std::cout << "--------stack---------" << std::endl;
+
 	MutantStack<int> mstack;
 	
 	mstack.push(5);
@@ -35,9 +39,9 @@ int main()
 	MutantStack<int>::iterator ite = mstack.end();
 	
 	++it;
-	std::cout << "after +; " << *it << std::endl;
+	std::cout << "after +: " << *it << std::endl;
 	--it;
-	std::cout << "after -; " << *it << std::endl;
+	std::cout << "after -: " << *it << std::endl;
 
 	std::cout << "----------------------" << std::endl;
 	
@@ -47,24 +51,48 @@ int main()
 		++it;
 	}
 
+	std::stack<int> s(mstack);
+
 	std::cout << "----------------------" << std::endl;
 
-	std::stack<int> s(mstack);
-	//MutantStack<int> s(mstack);
-	//MutantStack<int>::iterator its = s.container().begin();
-	//MutantStack<int>::iterator ites = s.container().end();
-	//std::stack<int>::container_type::iterator its = s.begin();
-	//std::stack<int>::container_type::iterator ites = s.end();
-	//while (its != ites)
-	//{
-	//	std::cout << *its << std::endl;
-	//	++its;
-	//}
+	/*std::cout << "---------list---------" << std::endl;
+
+	std::list<int> mstack;
 	
+	mstack.push_back(5);
+	mstack.push_back(17);
+	
+	std::cout << "top: " << mstack.back() << std::endl;
+	
+	mstack.pop_back();
+	
+	std::cout << "size: " << mstack.size() << std::endl;
+	
+	mstack.push_back(3);
+	mstack.push_back(5);
+	mstack.push_back(737);
+	//[...]
+	mstack.push_back(0);
+	
+	std::list<int>::iterator it = mstack.begin();
+	std::list<int>::iterator ite = mstack.end();
+	
+	++it;
+	std::cout << "after +: " << *it << std::endl;
+	--it;
+	std::cout << "after -: " << *it << std::endl;
 
-	//std::stack<int> s(mstack); how can we have begin and end for s class
+	std::cout << "----------------------" << std::endl;
+	
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
 
-	//in std=c++98 orthodox canonical form: To repair this injustice, you have to make the std::stack container iterable. Write a MutantStack class. It will be implemented in terms of a std::stack. It will offer all its member functions, plus an additional feature: iterators.
+	std::list<int> s(mstack);
+
+	std::cout << "----------------------" << std::endl;*/
 
 	return 0;
 }
