@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:44:37 by mtemel            #+#    #+#             */
-/*   Updated: 2023/02/23 12:32:39 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/02/23 12:59:30 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int main()
 {
-	/*std::cout << "--------stack---------" << std::endl;
+	std::cout << "--------stack---------" << std::endl;
 
 	MutantStack<int> mstack;
 	
@@ -53,9 +53,9 @@ int main()
 
 	std::stack<int> s(mstack);
 
-	std::cout << "----------------------" << std::endl;*/
+	std::cout << "----------------------" << std::endl;
 
-	std::cout << "---------list---------" << std::endl;
+	/*std::cout << "---------list---------" << std::endl;
 
 	std::list<int> mstack;
 	
@@ -94,5 +94,5 @@ int main()
 
 	std::cout << "----------------------" << std::endl;
 
-	return 0;
+	return 0;*/
 }
