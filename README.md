@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-	42cursus' CPP-Modules
+CPP Modules
 </h1>
 
 <table>
