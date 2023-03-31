@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 14:14:43 by mtemel            #+#    #+#             */
-/*   Updated: 2023/03/31 16:14:59 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/03/31 17:10:43 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,8 @@ void	PmergeMe::mergesortVec(std::vector<int> &pvector, int left, int right)
 
 void	PmergeMe::merge_vec(std::vector<int> &pvec, int left, int mid, int right)
 {
-	int n1 = mid - left + 1; // sol alt dizi boyutu
-	int n2 = right - mid; // sağ alt dizi boyutu
+	int n1 = mid - left + 1; // left sub array size
+	int n2 = right - mid; // right sub array size
 	int tempL[n1];
 	int tempR[n2];
 
