@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:50:12 by mtemel            #+#    #+#             */
-/*   Updated: 2023/03/30 02:00:30 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/03/31 12:38:42 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ BitcoinExchange::BitcoinExchange()
 		std::cout << "\033[1;32mCVS file opened properly!\033[0m" << std::endl;
 
 	std::getline(this->ifs, line); // first line : (date, exchange_rate)
-	// std::cout << "\033[1;34mFirst line (nom): \033[0m" << line << std::endl;
+	//std::cout << "\033[1;34mFirst line (nom): \033[0m" << line << std::endl;
 
 
 	while(std::getline(this->ifs, line))
@@ -287,7 +287,7 @@ void BitcoinExchange::rateCalculator(char *filename)
 		(void)curr_stamp;
 		for (std::map<int, float>::iterator it = this->map.begin(); it != map.end(); it++)
 		{
-			if ((*it).first == curr_stamp)
+			if (it->first == curr_stamp)
 			{
 				std::cout << temp.substr(0,10) << " => " << temp.substr(13, temp.size() - 13) << " = " << (*it).second * rate << std::endl;
 				break;

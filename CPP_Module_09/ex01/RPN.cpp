@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 02:35:47 by mtemel            #+#    #+#             */
-/*   Updated: 2023/03/30 03:58:36 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/03/31 12:53:48 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,15 @@ void RPN::calculate(char *rpnot)
 			else if(ptr[0] == '-')
 				temp = this->numb[0] - this->numb[1];
 			else if(ptr[0] == '/')
-				temp = this->numb[0] / this->numb[1];
+			{
+				if (this->numb[1] != 0)
+					temp = this->numb[0] / this->numb[1];
+				else
+				{
+					std::cout << "Error!" << std::endl;
+					return;
+				}
+			}
 			else if(ptr[0] == '*')
 				temp = this->numb[0] * this->numb[1];
 			this->numb.push_back(temp);
