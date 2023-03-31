@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 02:35:47 by mtemel            #+#    #+#             */
-/*   Updated: 2023/03/31 12:53:48 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/03/31 16:49:23 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,32 +35,29 @@ void RPN::calculate(char *rpnot)
 	}
 
 	char *ptr = strtok(rpnot, " ");
-	
-	// std::cout << ptr << std::endl;
-	// if(!isdigit(*ptr) || strlen(ptr) != 1)
-	// {
-	// 	std::cout << "Error!" << std::endl;
-	// 	return;
-	// }
 
 	int temp = 0;
+	int second = 0;
 	int i = 0;
 	while (ptr)
 	{
 		if (isdigit(*ptr) && strlen(ptr) == 1 && ( i == 0 || i % 2 != 0))
 		{
-			this->numb.push_back(atoi(ptr));
+			if (i == 0)
+				this->numb.push(atoi(ptr));
+			else
+				second = atoi(ptr);
 		}
 		else if (strlen(ptr) == 1 && i % 2 == 0 && strchr("+-/*", ptr[0]))
 		{
 			if(ptr[0] == '+')
-				temp = this->numb[0] + this->numb[1];
+				temp = numb.top() + second;
 			else if(ptr[0] == '-')
-				temp = this->numb[0] - this->numb[1];
+				temp = numb.top() - second;
 			else if(ptr[0] == '/')
 			{
-				if (this->numb[1] != 0)
-					temp = this->numb[0] / this->numb[1];
+				if (second != 0)
+					temp = numb.top() / second;
 				else
 				{
 					std::cout << "Error!" << std::endl;
@@ -68,10 +65,9 @@ void RPN::calculate(char *rpnot)
 				}
 			}
 			else if(ptr[0] == '*')
-				temp = this->numb[0] * this->numb[1];
-			this->numb.push_back(temp);
-			this->numb.pop_front();
-			this->numb.pop_front();
+				temp = numb.top() * second;;
+			numb.push(temp);
+			//std::cout << this->numb.top() << std::endl;
 		}
 		else
 		{
@@ -92,7 +88,5 @@ void RPN::calculate(char *rpnot)
 	// 	std::cout << "token: " << *it << std::endl;
 	// }
 
-	std::cout << "numb: " << this->numb[0] << std::endl;
-
-	
+	std::cout << this->numb.top() << std::endl;
 }

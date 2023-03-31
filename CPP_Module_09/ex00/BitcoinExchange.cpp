@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:50:12 by mtemel            #+#    #+#             */
-/*   Updated: 2023/03/31 12:38:42 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/03/31 16:36:30 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -245,6 +245,7 @@ void BitcoinExchange::rateCalculator(char *filename)
 		return;
 	}
 	
+	std::getline(ifn, line); //first line of txt file (date | value)
 	while(std::getline(ifn, line))
 	{
 		if (!strchr(line.c_str(), '|') || !strchr(line.c_str(), '-'))
