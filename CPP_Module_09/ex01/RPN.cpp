@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 02:35:47 by mtemel            #+#    #+#             */
-/*   Updated: 2023/03/31 16:49:23 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/04/01 17:18:00 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,55 +28,115 @@ RPN RPN::operator = (RPN const&)
 
 void RPN::calculate(char *rpnot)
 {
-	if(!rpnot || !strchr(rpnot, ' ') || (!strchr(rpnot, '+') && !strchr(rpnot, '-') && !strchr(rpnot, '/') && !strchr(rpnot, '*')))
+	if(!rpnot || (!strchr(rpnot, '+') && !strchr(rpnot, '-') && !strchr(rpnot, '/') && !strchr(rpnot, '*')))
 	{
 		std::cout << "Error!" << std::endl;
 		return;
 	}
 
-	char *ptr = strtok(rpnot, " ");
-
 	int temp = 0;
-	int second = 0;
-	int i = 0;
-	while (ptr)
+	int i = -1;
+	while (rpnot[++i])
 	{
-		if (isdigit(*ptr) && strlen(ptr) == 1 && ( i == 0 || i % 2 != 0))
+		if (isdigit(rpnot[i]))
+			this->numb.push(rpnot[i] - 48);
+		else if (strchr("+-/*", rpnot[i]))
 		{
-			if (i == 0)
-				this->numb.push(atoi(ptr));
-			else
-				second = atoi(ptr);
-		}
-		else if (strlen(ptr) == 1 && i % 2 == 0 && strchr("+-/*", ptr[0]))
-		{
-			if(ptr[0] == '+')
-				temp = numb.top() + second;
-			else if(ptr[0] == '-')
-				temp = numb.top() - second;
-			else if(ptr[0] == '/')
+			if(rpnot[i] == '+')
 			{
-				if (second != 0)
-					temp = numb.top() / second;
+				temp = numb.top();
+				numb.pop();
+				temp = temp + numb.top();
+			}
+			else if(rpnot[i] == '-')
+			{
+				temp = numb.top();
+				numb.pop();
+				temp = temp - numb.top();
+			}
+			else if(rpnot[i] == '/')
+			{
+				temp = numb.top();
+				numb.pop();
+				if(numb.top() != 0)
+					temp = temp / numb.top();
 				else
 				{
 					std::cout << "Error!" << std::endl;
 					return;
 				}
 			}
-			else if(ptr[0] == '*')
-				temp = numb.top() * second;;
+			else if(rpnot[i] == '*')
+			{
+				temp = numb.top();
+				numb.pop();
+				temp = temp * numb.top();
+			}
+			if(numb.size() > 0)
+				numb.pop();
 			numb.push(temp);
-			//std::cout << this->numb.top() << std::endl;
+			std::cout << this->numb.top() << std::endl;
 		}
-		else
+		else if(rpnot[i] != 32)
 		{
 			std::cout << "Error!" << std::endl;
 			return;
 		}
-		ptr = strtok(NULL, " ");
-		i++;
 	}
+
+
+
+	//if(!rpnot || !strchr(rpnot, ' ') || (!strchr(rpnot, '+') && !strchr(rpnot, '-') && !strchr(rpnot, '/') && !strchr(rpnot, '*')))
+	//{
+	//	std::cout << "Error!" << std::endl;
+	//	return;
+	//}
+
+	//char *ptr = strtok(rpnot, " ");
+
+	//int temp = 0;
+	//int second = 0;
+	//int i = 0;
+	//while (ptr)
+	//{
+	//	if (isdigit(*ptr) && strlen(ptr) == 1 && ( i == 0 || i % 2 != 0))
+	//	{
+	//		if (i == 0)
+	//			this->numb.push(atoi(ptr));
+	//		else
+	//			second = atoi(ptr);
+	//	}
+	//	else if (strlen(ptr) == 1 && i % 2 == 0 && strchr("+-/*", ptr[0]))
+	//	{
+	//		if(ptr[0] == '+')
+	//			temp = numb.top() + second;
+	//		else if(ptr[0] == '-')
+	//			temp = numb.top() - second;
+	//		else if(ptr[0] == '/')
+	//		{
+	//			if (second != 0)
+	//				temp = numb.top() / second;
+	//			else
+	//			{
+	//				std::cout << "Error!" << std::endl;
+	//				return;
+	//			}
+	//		}
+	//		else if(ptr[0] == '*')
+	//			temp = numb.top() * second;;
+	//		numb.push(temp);
+	//		//std::cout << this->numb.top() << std::endl;
+	//	}
+	//	else
+	//	{
+	//		std::cout << "Error!" << std::endl;
+	//		return;
+	//	}
+	//	ptr = strtok(NULL, " ");
+	//	i++;
+	//}
+
+
 
 	// for (std::deque<int>::iterator it = numb.begin(); it != numb.end(); it++)
 	// {
