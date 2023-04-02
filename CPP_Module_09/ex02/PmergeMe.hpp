@@ -6,10 +6,11 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 14:04:22 by mtemel            #+#    #+#             */
-/*   Updated: 2023/03/31 16:09:19 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/04/02 22:59:02 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cstdlib> //atoi
 #include <iostream>
 #include <vector>
 #include <deque>

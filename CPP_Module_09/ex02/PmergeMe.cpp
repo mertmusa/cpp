@@ -6,7 +6,7 @@
 /*   By: mtemel <mtemel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 14:14:43 by mtemel            #+#    #+#             */
-/*   Updated: 2023/03/31 17:10:43 by mtemel           ###   ########.fr       */
+/*   Updated: 2023/04/02 23:00:58 by mtemel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ void	PmergeMe::addVector(char **argv, std::vector<int> *pvector)
 	int i = 0;
 	while (argv[i])
 	{
-		pvector->push_back(std::atoi(argv[i]));
+		// pvector->push_back(std::atoi(argv[i])); //mac OS
+		pvector->push_back(atoi(argv[i])); //linux
 		this->total_vector++;
 		i++;
 	}
@@ -141,7 +142,8 @@ void	PmergeMe::addDeque(char **argv, std::deque<int> *pdeque)
 	int i = 0;
 	while (argv[i])
 	{
-		pdeque->push_back(std::stoi(argv[i]));
+		// pdeque->push_back(std::stoi(argv[i])); //mac OS
+		pdeque->push_back(atoi(argv[i])); //linux
 		this->total_deque++;
 		i++;
 	}
